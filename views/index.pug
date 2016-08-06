@@ -1,0 +1,115 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(firstname='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    link(rel='stylesheet', href='style.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://code.jquery.com/jquery-3.1.0.min.js', integrity='sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=', crossorigin='anonymous')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src='main.js')
+    title Message Board App
+  body
+    .container
+      .page-header
+        h1 Message Board App
+      //
+        <div class="page-header">
+        <div id="header" class="row">
+        <h2>New Contact:</h2>
+        </div>
+      form#newContact.form-horizontal
+        fieldset
+          legend Contact List
+          .form-group
+            label.col-lg-2.control-label(for='inputName') First Name
+            .col-lg-10
+              input#firstName.form-control(type='text', placeholder='First Name')
+          .form-group
+            label.col-lg-2.control-label(for='inputEmail') Last Name
+            .col-lg-10
+              input#lastName.form-control(type='text', placeholder='Last Name')
+          .form-group
+            label.col-lg-2.control-label(for='inputEmail') Email
+            .col-lg-10
+              input#email.form-control(type='text', placeholder='Email')
+          .form-group
+            label.col-lg-2.control-label(for='inputPassword') Phone Number
+            .col-lg-10
+              input#phone.form-control(type='number', placeholder='Phone Number')
+          .form-group
+            label.col-lg-2.control-label(for='textArea') Messages
+            .col-lg-10
+              textarea#messages.form-control(rows='3')
+          .form-group
+            .col-lg-10.col-lg-offset-2
+              button.btn.btn-default(type='reset') Cancel
+              button#addContact.btn.btn-primary(type='submit') Submit
+      br
+      br
+      br
+      br
+      table.table.table-striped.table-hover
+        thead
+          tr
+            th First Name
+            th Last Name
+            th Email Address
+            th Phone Number
+            th Messages
+            th
+            th
+            th
+            th Edit
+            th Delete Contact
+        tbody#contactList
+          tr#template
+            td.firstName
+            td.lastName
+            td.email
+            td.phone
+            td.messages
+            td
+            td
+            td
+            td
+              button.btn.btn-primary.btn-xs.editBtn(type='button', data-toggle='modal', data-target='.bs-example-modal-lg') Edit Button
+            td.deleteTransaction
+              button.btn-sm.trashButton(type='button')
+                span.glyphicon.glyphicon-trash(<='', span='')
+      .row
+        #footer.col-xs-12
+      // modal template
+      .modal.fade.bs-example-modal-lg.mymodal.mymodal2(tabindex='-1', role='dialog', aria-labelledby='myLargeModalLabel')
+        .modal-dialog.modal-lg(role='document')
+          .modal-content
+            .modal-body
+              form#editContact
+                .row
+                  .row
+                    .col-xs-6
+                      .input-group
+                        span.input-group-addon First Name:
+                        input#editFirstName.form-control(type='text')
+                    .col-xs-6
+                      .input-group
+                        span.input-group-addon Last Name:
+                        input#editLastName.form-control(type='text')
+                  .row
+                    .col-xs-6
+                      .input-group
+                        span.input-group-addon E-mail address:
+                        input#editEmail.form-control(type='text', size='37')
+                    .col-xs-6
+                      .input-group
+                        span.input-group-addon Phone number:
+                        input#editPhone.form-control(type='text')
+                    .col-xs-6
+                      .input-group
+                        span.input-group-addon Messages:
+                        input#editMessages.form-control(type='text')
+                  // <button class="editContact" type="submit" class="btn btn-info">Edit Contact</button>
+                .modal-footer
+                  button.btn.btn-default(type='button', data-dismiss='modal') Close
+                  button.btn.btn-primary.saveBtn(type='button', data-dismiss='modal') Save changes

@@ -1,7 +1,6 @@
 {
   "name": "crudapp",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -9,15 +8,31 @@
   },
   "engines": {
     "node": "6.3.1"
-},
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",
+    "dotenv": "^2.0.0",
+    "ejs": "^2.5.1",
     "express": "^4.14.0",
+    "moment": "^2.14.1",
     "morgan": "^1.7.0",
+    "mysql": "^2.11.1",
+    "pug": "^2.0.0-beta4",
     "request": "^2.74.0",
+    "squel": "^5.3.3",
     "uuid": "^2.0.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/senecasisneros/crudapp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/senecasisneros/crudapp/issues"
+  },
+  "homepage": "https://github.com/senecasisneros/crudapp#readme",
+  "description": ""
 }
