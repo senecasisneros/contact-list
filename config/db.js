@@ -1,13 +1,8 @@
 'use strict';
 
 const mysql = require('mysql');
-// const error = require('chalk').white.bgRed.bold;
 
-if(!process.env.MYSQL_PASSWORD) {
-  throw err("Missing enviroment variable: MYSQL_PASSWORD")
-}
-
-const db = mysql.createConnection({
+const db = mysql.createConnection(process.env.JAWSDB_URL || {
   host: 'localhost',
   user: 'root',
   password: process.env.MYSQL_PASSWORD,

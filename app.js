@@ -43,7 +43,7 @@ app.get('/', (req, res, next) => {
     });
   })
   .post((req, res) => {
-    console.log('req.body', req.body);
+    // console.log('req.body', req.body);
     Contact.create(req.body, function(err) {
       if(err) {
         res.status(400).send(err);
